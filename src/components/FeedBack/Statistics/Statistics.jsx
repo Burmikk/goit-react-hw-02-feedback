@@ -1,9 +1,10 @@
 import PropTypes from 'prop-types';
+import styles from './statistics.module.scss';
 
 const Statistics = ({ good, neutral, bad, positivePercentage, children }) => {
   const total = `${good + neutral + bad}`;
   const statisticInfo = (
-    <div>
+    <div className={styles.statistics}>
       <p>Good: {good}</p>
       <p>Neutral: {neutral}</p>
       <p>Bad: {bad}</p>
