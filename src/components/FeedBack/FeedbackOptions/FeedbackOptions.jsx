@@ -2,7 +2,6 @@ import { nanoid } from 'nanoid';
 import PropTypes from 'prop-types';
 import styles from './feedbackOptions.module.scss';
 const FeedbackOptions = ({ onLeaveFeedback, options }) => {
-  console.log(styles);
   const button = options.map(item => (
     <li key={nanoid(2)}>
       <button
