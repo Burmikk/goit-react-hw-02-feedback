@@ -1,31 +1,20 @@
+import { nanoid } from 'nanoid';
 import PropTypes from 'prop-types';
 import styles from './feedbackOptions.module.scss';
-const FeedbackOptions = ({ onLeaveFeedback }) => {
-  return (
-    <div>
+
+const FeedbackOptions = ({ onLeaveFeedback, options }) => {
+  const button = options.map(item => (
+    <li key={nanoid(2)}>
       <button
         className={`${styles.btn} ${styles.good}`}
-        name="good"
-        onClick={event => onLeaveFeedback(event)}
+        name={item}
+        onClick={() => onLeaveFeedback(item)}
       >
-        Good
+        {item}
       </button>
-      <button
-        className={`${styles.btn} ${styles.neutral}`}
-        name="neutral"
-        onClick={event => onLeaveFeedback(event)}
-      >
-        Neutral
-      </button>
-      <button
-        className={`${styles.btn} ${styles.bad}`}
-        name="bad"
-        onClick={event => onLeaveFeedback(event)}
-      >
-        Bad
-      </button>
-    </div>
-  );
+    </li>
+  ));
+  return <ul className={styles.list}>{button}</ul>;
 };
 
 FeedbackOptions.propTypes = {

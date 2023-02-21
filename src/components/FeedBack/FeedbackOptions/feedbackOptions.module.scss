@@ -1,3 +1,11 @@
+.list {
+  width: 250px;
+  padding: 0;
+  display: flex;
+  list-style: none;
+  justify-content: space-between;
+}
+
 .btn {
   font-weight: 700;
   font-size: 18px;

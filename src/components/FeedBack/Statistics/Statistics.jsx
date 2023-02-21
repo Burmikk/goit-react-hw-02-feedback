@@ -13,12 +13,7 @@ const Statistics = ({ good, neutral, bad, positivePercentage, children }) => {
     </div>
   );
 
-  return (
-    <>
-      <h2>Statistics</h2>
-      {total === '0' ? children : statisticInfo}
-    </>
-  );
+  return <>{total === '0' ? children : statisticInfo}</>;
 };
 
 Statistics.propTypes = {
